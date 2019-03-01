@@ -1,0 +1,50 @@
+{
+  "name": "knex-with-pg",
+  "version": "1.0.0",
+  "private": true,
+  "scripts": {
+    "start": "node ./bin/www",
+    "dev:development": "set NODE_ENV=development&&nodemon",
+    "dev:production": "set NODE_ENV=production&&nodemon",
+    "test:hard": "set NODE_ENV=development&&(dropdb --if-exists knex_test & createdb knex_test)&node db_migrations_seeds.js& mocha test/**/*.spec.js",
+    "test": "set NODE_ENV=development&&mocha test/**/*.spec.js --watch"
+  },
+  "dependencies": {
+    "cookie-parser": "~1.4.3",
+    "debug": "~2.6.9",
+    "express": "~4.16.0",
+    "http-errors": "~1.6.2",
+    "knex": "^0.16.3",
+    "morgan": "~1.9.0",
+    "pg": "^7.8.1"
+  },
+  "devDependencies": {
+    "babel-preset-env": "^1.7.0",
+    "babel-register": "^6.26.0",
+    "chai": "^4.2.0",
+    "eslint": "^5.14.1",
+    "eslint-config-airbnb-base": "^13.1.0",
+    "eslint-plugin-import": "^2.16.0",
+    "mocha": "^6.0.2",
+    "nodemon": "^1.18.10",
+    "supertest": "^3.4.2"
+  },
+  "description": "example of use knex and postgres",
+  "main": "app.js",
+  "directories": {
+    "test": "test"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/edfcsx/knex-with-pg.git"
+  },
+  "keywords": [
+    "knex","pg"
+  ],
+  "author": "Eduardo Cipriano <edfcsx@gmail.com>",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/edfcsx/knex-with-pg/issues"
+  },
+  "homepage": "https://github.com/edfcsx/knex-with-pg#readme"
+}
